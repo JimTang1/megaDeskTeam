@@ -18,19 +18,14 @@ namespace megaDesk_Jim
 
             //populate surfaceMaterial combo box
 
-            try
-            {
-                List<DeskTopMaterial> materials = Enum.GetValues(typeof(DeskTopMaterial))
-                                            .Cast<DeskTopMaterial>()
-                                            .ToList();
 
-                cmbSurefaceM.DataSource = materials;
-                cmbSurefaceM.SelectedIndex = -1;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            List<DeskTopMaterial> materials = Enum.GetValues(typeof(DeskTopMaterial))
+                            .Cast<DeskTopMaterial>()
+                            .ToList();
+
+            cmbSurefaceM.DataSource = materials;
+            cmbSurefaceM.SelectedIndex = -1;
+
             
 
             List<Delivery> deliveryDay = Enum.GetValues(typeof(Delivery))
