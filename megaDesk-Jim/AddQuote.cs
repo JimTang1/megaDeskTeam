@@ -39,7 +39,15 @@ namespace megaDesk_Jim
 
             cmbDelivery.DataSource = deliveryDay;
             cmbDelivery.SelectedIndex = -1;
-        }
+
+            this.numerWidth.Maximum = Desk.MAX_WIDTH;
+            this.numerWidth.Minimum = Desk.MIN_WIDTH;
+            this.numerDepth.Maximum = Desk.MAX_DEPTH;
+            this.numerDepth.Minimum = Desk.MIN_DEPTH;
+            this.numerDrawers.Maximum = Desk.MAX_DRAWERS;
+            this.numerDrawers.Minimum = Desk.MIN_DRAWERS;
+
+    }
 
         private void AddQuote_Load(object sender, EventArgs e)
         {
@@ -55,24 +63,6 @@ namespace megaDesk_Jim
         private void close_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void numerWidth_ValueChanged(object sender, EventArgs e)
-        {
-                numerWidth.Maximum = 96;
-                numerWidth.Minimum = 24;
-        }
-
-        private void numerDepth_ValueChanged(object sender, EventArgs e)
-        {
-            numerDepth.Maximum = 48;
-            numerDepth.Minimum = 12;
-        }
-
-        private void numerDrawers_ValueChanged(object sender, EventArgs e)
-        {
-            numerDrawers.Maximum = 7;
-            numerDrawers.Minimum = 0;
         }
     }
 }

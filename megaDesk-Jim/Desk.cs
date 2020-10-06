@@ -25,6 +25,13 @@ namespace megaDesk_Jim
     }
     public class Desk
     {
+        public const short MIN_WIDTH = 24;
+        public const short MAX_WIDTH = 96;
+        public const short MIN_DEPTH = 12;
+        public const short MAX_DEPTH = 48;
+        public const short MIN_DRAWERS = 0;
+        public const short MAX_DRAWERS = 7;
+
         public int Width { get; set; }
 
         public int Depth { get; set; }
