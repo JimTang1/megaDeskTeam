@@ -16,13 +16,6 @@ namespace megaDesk_Jim
         Veneer,
     }
 
-    public enum Delivery
-    {
-        Rush3Days,
-        Rush5Days,
-        Rush7Days,
-        Normal14Days,
-    }
     public class Desk
     {
         public const short MIN_WIDTH = 24;
@@ -32,12 +25,12 @@ namespace megaDesk_Jim
         public const short MIN_DRAWERS = 0;
         public const short MAX_DRAWERS = 7;
 
-        public int Width { get; set; }
+        public decimal Width { get; set; }
 
-        public int Depth { get; set; }
+        public decimal Depth { get; set; }
 
         public int  NumberOfDrawers { get; set; }
 
-        public DeskTopMaterial SurfaceMateroal { get; set; }
+        public DeskTopMaterial SurfaceMaterial { get; set; }
     }
 }

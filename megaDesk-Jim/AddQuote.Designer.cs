@@ -54,7 +54,6 @@
             this.numerWidth.Name = "numerWidth";
             this.numerWidth.Size = new System.Drawing.Size(120, 21);
             this.numerWidth.TabIndex = 0;
-//            this.numerWidth.ValueChanged += new System.EventHandler(this.numerWidth_ValueChanged);
             // 
             // width
             // 
@@ -74,6 +73,7 @@
             this.getQuote.TabIndex = 2;
             this.getQuote.Text = "Get Quote";
             this.getQuote.UseVisualStyleBackColor = true;
+            this.getQuote.Click += new System.EventHandler(this.getQuote_Click);
             // 
             // close
             // 
@@ -119,7 +119,6 @@
             this.numerDepth.Name = "numerDepth";
             this.numerDepth.Size = new System.Drawing.Size(120, 21);
             this.numerDepth.TabIndex = 7;
-//            this.numerDepth.ValueChanged += new System.EventHandler(this.numerDepth_ValueChanged);
             // 
             // numerDrawers
             // 
@@ -127,7 +126,6 @@
             this.numerDrawers.Name = "numerDrawers";
             this.numerDrawers.Size = new System.Drawing.Size(38, 21);
             this.numerDrawers.TabIndex = 8;
-//            this.numerDrawers.ValueChanged += new System.EventHandler(this.numerDrawers_ValueChanged);
             // 
             // numberDrawers
             // 
