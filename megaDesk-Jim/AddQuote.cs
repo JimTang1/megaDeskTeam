@@ -70,7 +70,6 @@ namespace megaDesk_Jim
             desk.Depth = (int)this.numerDepth.Value;
             desk.NumberOfDrawers = (int)this.numerDrawers.Value;
             desk.SurfaceMaterial = (DeskTopMaterial)this.cmbSurefaceM.SelectedValue;
-            Console.WriteLine(Width);
 
             DeskQuote deskQuote = new DeskQuote();
             deskQuote.CustomerName = this.name.Text;
