@@ -65,35 +65,24 @@ namespace megaDesk_Jim
 
         private void getQuote_Click(object sender, EventArgs e)
         {
+
             Desk desk = new Desk();
             desk.Width = (int)this.numerWidth.Value;
             desk.Depth = (int)this.numerDepth.Value;
             desk.NumberOfDrawers = (int)this.numerDrawers.Value;
             desk.SurfaceMaterial = (DeskTopMaterial)this.cmbSurefaceM.SelectedValue;
-            Console.WriteLine(Width);
 
             DeskQuote deskQuote = new DeskQuote();
             deskQuote.CustomerName = this.name.Text;
             deskQuote.Desk = desk;
             deskQuote.DeliveryType = (Delivery)this.cmbDelivery.SelectedItem;
 
-
-            //var Desk = new Desk();
-            //Desk.Width = numerWidth.Value;
-            //Desk.Depth = numerDepth.Value;
-            //Desk.NumberOfDrawers = (int)numerDrawers.Value;
-
-            //Desk desk = new Desk
-            //{
-            //    Width = numerWidth.Value,
-            //    Depth = numerDepth.Value,
-            //    NumberOfDrawers = (int)numerDrawers.Value,
-            //    SurfaceMaterial = (DeskTopMaterial)cmbSurefaceM.SelectedValue
-            //};
-
             deskQuote.getQuotePrice();
 
-
+            DisplayQuote displayQuote = new DisplayQuote(this);
+            displayQuote.Show();
+            
+            this.Hide();
         }
     }
 }
