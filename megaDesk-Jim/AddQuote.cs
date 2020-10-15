@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -93,6 +95,19 @@ namespace megaDesk_Jim
             deskQuote.getQuotePrice();
 
 
+        }
+
+        private void saveQuote(List<DeskQuote> deskQuotes)
+        {
+            var quotesFile = @"quote.json";
+            // write quotes in the json files
+
+            string JSONResult = JsonConvert.SerializeObject(deskQuotes);
+            using (StreamWriter writer = new StreamWriter(quotesFile))
+            {
+                writer.WriteLine(JSONResult.ToString());
+                writer.Close();
+            }
         }
     }
 }
