@@ -50,13 +50,7 @@ namespace megaDesk_Jim
             cmbDelivery.DataSource = deliveryDay;
             cmbDelivery.SelectedIndex = -1;
 
-    }
-
-        private void AddQuote_Load(object sender, EventArgs e)
-        {
-
         }
-
         private void AddQuote_FormClosed(object sender, FormClosedEventArgs e)
         {
             Form MainMenu = (Form)this.Tag;
@@ -75,13 +69,13 @@ namespace megaDesk_Jim
             desk.Depth = (int)this.numerDepth.Value;
             desk.NumberOfDrawers = (int)this.numerDrawers.Value;
             desk.SurfaceMaterial = (DeskTopMaterial)this.cmbSurefaceM.SelectedValue;
-            Console.WriteLine(Width);
 
             DeskQuote deskQuote = new DeskQuote();
             deskQuote.CustomerName = this.name.Text;
             deskQuote.Desk = desk;
             deskQuote.DeliveryType = (Delivery)this.cmbDelivery.SelectedItem;
-
+            
+            deskQuote.getQuotePrice();
 
             //var Desk = new Desk();
             //Desk.Width = numerWidth.Value;
@@ -95,10 +89,6 @@ namespace megaDesk_Jim
             //    NumberOfDrawers = (int)numerDrawers.Value,
             //    SurfaceMaterial = (DeskTopMaterial)cmbSurefaceM.SelectedValue
             //};
-
-            deskQuote.getQuotePrice();
-
-
         }
     }
 }

@@ -97,8 +97,6 @@ namespace megaDesk_Jim
             //};
 
             deskQuote.getQuotePrice();
-
-
         }
     }
 }
