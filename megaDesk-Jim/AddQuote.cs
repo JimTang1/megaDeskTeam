@@ -77,9 +77,7 @@ namespace megaDesk_Jim
             deskQuote.Desk = desk;
             deskQuote.DeliveryType = (Delivery)this.cmbDelivery.SelectedItem;
 
-            deskQuote.getQuotePrice();
-
-            DisplayQuote displayQuote = new DisplayQuote(this);
+            DisplayQuote displayQuote = new DisplayQuote(this, deskQuote);
             displayQuote.Show();
             
             this.Hide();

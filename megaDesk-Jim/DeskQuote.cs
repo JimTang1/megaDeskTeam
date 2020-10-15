@@ -27,6 +27,7 @@ namespace megaDesk_Jim
         private const decimal ROSEWOOD_COST = 300.00M;
         private const decimal VENEER_COST = 125.00M;
 
+        // Grab these numbers from a file.
         private const decimal RUSH_3DAYS = 60.00M;
         private const decimal RUSH_5DAYS = 40.00M;
         private const decimal RUSH_7DAYS = 30.00M;
@@ -96,6 +97,7 @@ namespace megaDesk_Jim
             {
                 price += VENEER_COST;
             }
+            price += DRAWER_COST * this.Desk.NumberOfDrawers;
 
             price += getRushOrderPrice();
             return price;

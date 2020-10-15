@@ -13,33 +13,29 @@ namespace megaDesk_Jim
     public partial class DisplayQuote : Form
     {
         private AddQuote add;
-        public DisplayQuote(AddQuote addQ)
+        private DeskQuote _deskQuote;
+
+        public DisplayQuote(AddQuote addQ, DeskQuote deskQuote)
         {
             InitializeComponent();
             add = addQ;
+            _deskQuote = deskQuote;
         }
 
         private void DisplayQuote_Load(object sender, EventArgs e)
         {
-
-            DeskQuote deskQuote = new DeskQuote();
-            
-            var delivery= add.cmbDelivery.SelectedItem;
-            var material = add.cmbSurefaceM.SelectedValue;
-            labelName.Text = add.name.Text;
-            labelWidth.Text = add.numerWidth.Value.ToString();
-            labelDepth.Text = add.numerDepth.Value.ToString();
-            labelDrawers.Text = add.numerDrawers.Value.ToString();
-            labelDelivery.Text = delivery.ToString();
-            labelMaterial.Text = material.ToString();
-            labelPrice.Text = deskQuote.getQuotePrice().ToString();
-
-            //priceText.Text = add.getQuote_Click();
+            labelName.Text = _deskQuote.CustomerName;
+            labelWidth.Text = _deskQuote.Desk.Width.ToString();
+            labelDepth.Text = _deskQuote.Desk.Depth.ToString();
+            labelDrawers.Text = _deskQuote.Desk.NumberOfDrawers.ToString();
+            labelDelivery.Text = _deskQuote.DeliveryType.ToString();
+            labelMaterial.Text = _deskQuote.Desk.SurfaceMaterial.ToString();
+            labelPrice.Text = _deskQuote.getQuotePrice().ToString();
         }
 
         private void DisplayQuote_FormClosed(object sender, FormClosedEventArgs e)
         {
-            add.Show();
+            add.Close();
         }
 
         private void close_Click(object sender, EventArgs e)
