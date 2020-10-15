@@ -67,7 +67,7 @@ namespace megaDesk_Jim
         public decimal getQuotePrice()
         {
             decimal price = BASE_DESK_PRICE;
-            decimal surfaceArea = this.Desk.Width * this.Desk.Depth;
+            decimal surfaceArea = Desk.Width * Desk.Depth;
 
             //count the price of surface area 
             if(surfaceArea > 1000)

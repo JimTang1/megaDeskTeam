@@ -21,12 +21,20 @@ namespace megaDesk_Jim
 
         private void DisplayQuote_Load(object sender, EventArgs e)
         {
-            name.Text = add.name.Text;
-            numerWidth.Value = add.numerWidth.Value;
-            numerDepth.Value = add.numerDepth.Value;
-            numerDrawers.Value = add.numerDrawers.Value;
-            cmbSurefaceM.SelectedValue = add.cmbSurefaceM.SelectedValue;
-            cmbDelivery.SelectedItem = add.cmbDelivery.SelectedItem;
+
+            DeskQuote deskQuote = new DeskQuote();
+            
+            var delivery= add.cmbDelivery.SelectedItem;
+            var material = add.cmbSurefaceM.SelectedValue;
+            labelName.Text = add.name.Text;
+            labelWidth.Text = add.numerWidth.Value.ToString();
+            labelDepth.Text = add.numerDepth.Value.ToString();
+            labelDrawers.Text = add.numerDrawers.Value.ToString();
+            labelDelivery.Text = delivery.ToString();
+            labelMaterial.Text = material.ToString();
+            labelPrice.Text = deskQuote.getQuotePrice().ToString();
+
+            //priceText.Text = add.getQuote_Click();
         }
 
         private void DisplayQuote_FormClosed(object sender, FormClosedEventArgs e)
