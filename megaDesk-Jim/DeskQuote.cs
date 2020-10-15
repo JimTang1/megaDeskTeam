@@ -96,6 +96,7 @@ namespace megaDesk_Jim
             {
                 price += VENEER_COST;
             }
+            price += DRAWER_COST * this.Desk.NumberOfDrawers;
 
             price += getRushOrderPrice();
             return price;

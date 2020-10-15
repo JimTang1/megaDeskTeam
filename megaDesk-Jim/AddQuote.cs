@@ -75,7 +75,6 @@ namespace megaDesk_Jim
             _deskQuote.Desk = _desk;
             _deskQuote.DeliveryType = (Delivery)this.cmbDelivery.SelectedItem;
             _deskQuote.QuoteDate = DateTime.Now;
-            _deskQuote.getQuotePrice();
 
             var displayQuote = new DisplayQuote(this, _deskQuote);
             displayQuote.Show();

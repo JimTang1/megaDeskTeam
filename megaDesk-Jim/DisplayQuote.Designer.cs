@@ -43,7 +43,7 @@
             this.customerName = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.price = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numerWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numerDepth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numerDrawers)).BeginInit();
@@ -203,20 +203,20 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Price Quote:";
             // 
-            // textBox1
+            // price
             // 
-            this.textBox1.Location = new System.Drawing.Point(623, 344);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(159, 22);
-            this.textBox1.TabIndex = 16;
+            this.price.Location = new System.Drawing.Point(623, 344);
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            this.price.Size = new System.Drawing.Size(159, 22);
+            this.price.TabIndex = 16;
             // 
             // DisplayQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 533);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.price);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.name);
             this.Controls.Add(this.customerName);
@@ -261,6 +261,6 @@
         private System.Windows.Forms.Label customerName;
         private System.Windows.Forms.TextBox name;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox price;
     }
 }

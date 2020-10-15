@@ -42,6 +42,7 @@ namespace megaDesk_Jim
             this.cmbSurefaceM.SelectedIndex = (int)_deskQuote.Desk.SurfaceMaterial;
             this.name.Text = _deskQuote.CustomerName;
             this.cmbDelivery.SelectedIndex = (int)_deskQuote.DeliveryType;
+            this.price.Text = "$" + _deskQuote.getQuotePrice().ToString();
         }
 
         private void DisplayQuote_FormClosed(object sender, FormClosedEventArgs e)
