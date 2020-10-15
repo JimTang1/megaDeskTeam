@@ -30,7 +30,6 @@
         {
             this.numerWidth = new System.Windows.Forms.NumericUpDown();
             this.width = new System.Windows.Forms.Label();
-            this.getQuote = new System.Windows.Forms.Button();
             this.close = new System.Windows.Forms.Button();
             this.cmbSurefaceM = new System.Windows.Forms.ComboBox();
             this.surfaceMaterial = new System.Windows.Forms.Label();
@@ -44,6 +43,7 @@
             this.customerName = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numerWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numerDepth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numerDrawers)).BeginInit();
@@ -62,24 +62,12 @@
             // 
             this.width.AutoSize = true;
             this.width.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
-            this.width.Location = new System.Drawing.Point(114, 280);
+            this.width.Location = new System.Drawing.Point(100, 280);
             this.width.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.width.Name = "width";
             this.width.Size = new System.Drawing.Size(75, 26);
             this.width.TabIndex = 1;
             this.width.Text = "Width:";
-            // 
-            // getQuote
-            // 
-            this.getQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.getQuote.Location = new System.Drawing.Point(176, 444);
-            this.getQuote.Margin = new System.Windows.Forms.Padding(4);
-            this.getQuote.Name = "getQuote";
-            this.getQuote.Size = new System.Drawing.Size(225, 59);
-            this.getQuote.TabIndex = 2;
-            this.getQuote.Text = "Get Quote";
-            this.getQuote.UseVisualStyleBackColor = true;
-            this.getQuote.Click += new System.EventHandler(this.getQuote_Click);
             // 
             // close
             // 
@@ -117,7 +105,7 @@
             // 
             this.depth.AutoSize = true;
             this.depth.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
-            this.depth.Location = new System.Drawing.Point(114, 341);
+            this.depth.Location = new System.Drawing.Point(100, 341);
             this.depth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.depth.Name = "depth";
             this.depth.Size = new System.Drawing.Size(76, 26);
@@ -146,7 +134,7 @@
             // 
             this.numberDrawers.AutoSize = true;
             this.numberDrawers.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
-            this.numberDrawers.Location = new System.Drawing.Point(100, 221);
+            this.numberDrawers.Location = new System.Drawing.Point(90, 221);
             this.numberDrawers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.numberDrawers.Name = "numberDrawers";
             this.numberDrawers.Size = new System.Drawing.Size(202, 26);
@@ -177,12 +165,12 @@
             // 
             this.newQuote.AutoSize = true;
             this.newQuote.Font = new System.Drawing.Font("Trebuchet MS", 30F, System.Drawing.FontStyle.Bold);
-            this.newQuote.Location = new System.Drawing.Point(231, 25);
+            this.newQuote.Location = new System.Drawing.Point(293, 25);
             this.newQuote.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.newQuote.Name = "newQuote";
-            this.newQuote.Size = new System.Drawing.Size(421, 63);
+            this.newQuote.Size = new System.Drawing.Size(297, 63);
             this.newQuote.TabIndex = 12;
-            this.newQuote.Text = "Displaying Quote";
+            this.newQuote.Text = "View Quote";
             // 
             // customerName
             // 
@@ -213,13 +201,22 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 26);
             this.label1.TabIndex = 15;
-            this.label1.Text = "Quote Price:";
+            this.label1.Text = "Price Quote:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(623, 344);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(159, 22);
+            this.textBox1.TabIndex = 16;
             // 
             // DisplayQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 533);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.name);
             this.Controls.Add(this.customerName);
@@ -233,14 +230,12 @@
             this.Controls.Add(this.surfaceMaterial);
             this.Controls.Add(this.cmbSurefaceM);
             this.Controls.Add(this.close);
-            this.Controls.Add(this.getQuote);
             this.Controls.Add(this.width);
             this.Controls.Add(this.numerWidth);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DisplayQuote";
             this.Text = "AddQuote";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddQuote_FormClosed);
-            this.Load += new System.EventHandler(this.AddQuote_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DisplayQuote_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.numerWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numerDepth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numerDrawers)).EndInit();
@@ -253,7 +248,6 @@
 
         private System.Windows.Forms.NumericUpDown numerWidth;
         private System.Windows.Forms.Label width;
-        private System.Windows.Forms.Button getQuote;
         private System.Windows.Forms.Button close;
         private System.Windows.Forms.ComboBox cmbSurefaceM;
         private System.Windows.Forms.Label surfaceMaterial;
@@ -267,5 +261,6 @@
         private System.Windows.Forms.Label customerName;
         private System.Windows.Forms.TextBox name;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

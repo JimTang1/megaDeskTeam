@@ -12,27 +12,15 @@ namespace megaDesk_Jim
 {
     public partial class DisplayQuote : Form
     {
-        public object SurfaceMaterial { get; private set; }
-        public object DateTiem { get; private set; }
+        private Form _addQuote;
+        private DeskQuote _deskQuote;
 
-        public DisplayQuote()
+        public DisplayQuote(AddQuote addQuote, DeskQuote deskQuote)
         {
             InitializeComponent();
 
-            //populate surfaceMaterial combo box
-            this.numerWidth.Maximum = Desk.MAX_WIDTH;
-            this.numerWidth.Minimum = Desk.MIN_WIDTH;
-
-            this.numerDepth.Maximum = Desk.MAX_DEPTH;
-            this.numerDepth.Minimum = Desk.MIN_DEPTH;
-
-            this.numerDrawers.Maximum = Desk.MAX_DRAWERS;
-            this.numerDrawers.Minimum = Desk.MIN_DRAWERS;
-
-            // Initializing defaults:
-            numerWidth.Text = "";
-            numerDepth.Text = "";
-            numerDrawers.Text = "";
+            _addQuote = addQuote;
+            _deskQuote = deskQuote;
 
             List<DeskTopMaterial> materials = Enum.GetValues(typeof(DeskTopMaterial))
                             .Cast<DeskTopMaterial>()
@@ -41,8 +29,6 @@ namespace megaDesk_Jim
             cmbSurefaceM.DataSource = materials;
             cmbSurefaceM.SelectedIndex = -1;
 
-
-
             List<Delivery> deliveryDay = Enum.GetValues(typeof(Delivery))
                             .Cast<Delivery>()
                             .ToList();
@@ -50,53 +36,22 @@ namespace megaDesk_Jim
             cmbDelivery.DataSource = deliveryDay;
             cmbDelivery.SelectedIndex = -1;
 
+            this.numerWidth.Value = _deskQuote.Desk.Width;
+            this.numerDepth.Value = _deskQuote.Desk.Depth;
+            this.numerDrawers.Value = _deskQuote.Desk.NumberOfDrawers;
+            this.cmbSurefaceM.SelectedIndex = (int)_deskQuote.Desk.SurfaceMaterial;
+            this.name.Text = _deskQuote.CustomerName;
+            this.cmbDelivery.SelectedIndex = (int)_deskQuote.DeliveryType;
         }
 
-        private void AddQuote_Load(object sender, EventArgs e)
+        private void DisplayQuote_FormClosed(object sender, FormClosedEventArgs e)
         {
-
-        }
-
-        private void AddQuote_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Form MainMenu = (Form)this.Tag;
-            MainMenu.Show();
+            _addQuote.Close();
         }
 
         private void close_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void getQuote_Click(object sender, EventArgs e)
-        {
-            Desk desk = new Desk();
-            desk.Width = (int)this.numerWidth.Value;
-            desk.Depth = (int)this.numerDepth.Value;
-            desk.NumberOfDrawers = (int)this.numerDrawers.Value;
-            desk.SurfaceMaterial = (DeskTopMaterial)this.cmbSurefaceM.SelectedValue;
-            Console.WriteLine(Width);
-
-            DeskQuote deskQuote = new DeskQuote();
-            deskQuote.CustomerName = this.name.Text;
-            deskQuote.Desk = desk;
-            deskQuote.DeliveryType = (Delivery)this.cmbDelivery.SelectedItem;
-
-
-            //var Desk = new Desk();
-            //Desk.Width = numerWidth.Value;
-            //Desk.Depth = numerDepth.Value;
-            //Desk.NumberOfDrawers = (int)numerDrawers.Value;
-
-            //Desk desk = new Desk
-            //{
-            //    Width = numerWidth.Value,
-            //    Depth = numerDepth.Value,
-            //    NumberOfDrawers = (int)numerDrawers.Value,
-            //    SurfaceMaterial = (DeskTopMaterial)cmbSurefaceM.SelectedValue
-            //};
-
-            deskQuote.getQuotePrice();
         }
     }
 }

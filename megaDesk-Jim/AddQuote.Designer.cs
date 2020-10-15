@@ -54,13 +54,13 @@
             this.numerWidth.Margin = new System.Windows.Forms.Padding(4);
             this.numerWidth.Name = "numerWidth";
             this.numerWidth.Size = new System.Drawing.Size(160, 22);
-            this.numerWidth.TabIndex = 0;
+            this.numerWidth.TabIndex = 2;
             // 
             // width
             // 
             this.width.AutoSize = true;
             this.width.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
-            this.width.Location = new System.Drawing.Point(114, 280);
+            this.width.Location = new System.Drawing.Point(100, 280);
             this.width.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.width.Name = "width";
             this.width.Size = new System.Drawing.Size(75, 26);
@@ -74,7 +74,7 @@
             this.getQuote.Margin = new System.Windows.Forms.Padding(4);
             this.getQuote.Name = "getQuote";
             this.getQuote.Size = new System.Drawing.Size(225, 59);
-            this.getQuote.TabIndex = 2;
+            this.getQuote.TabIndex = 6;
             this.getQuote.Text = "Get Quote";
             this.getQuote.UseVisualStyleBackColor = true;
             this.getQuote.Click += new System.EventHandler(this.getQuote_Click);
@@ -86,7 +86,7 @@
             this.close.Margin = new System.Windows.Forms.Padding(4);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(228, 59);
-            this.close.TabIndex = 3;
+            this.close.TabIndex = 7;
             this.close.Text = "Close";
             this.close.UseVisualStyleBackColor = true;
             this.close.Click += new System.EventHandler(this.close_Click);
@@ -115,7 +115,7 @@
             // 
             this.depth.AutoSize = true;
             this.depth.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
-            this.depth.Location = new System.Drawing.Point(114, 341);
+            this.depth.Location = new System.Drawing.Point(100, 341);
             this.depth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.depth.Name = "depth";
             this.depth.Size = new System.Drawing.Size(76, 26);
@@ -128,7 +128,7 @@
             this.numerDepth.Margin = new System.Windows.Forms.Padding(4);
             this.numerDepth.Name = "numerDepth";
             this.numerDepth.Size = new System.Drawing.Size(160, 22);
-            this.numerDepth.TabIndex = 7;
+            this.numerDepth.TabIndex = 3;
             // 
             // numerDrawers
             // 
@@ -136,13 +136,13 @@
             this.numerDrawers.Margin = new System.Windows.Forms.Padding(4);
             this.numerDrawers.Name = "numerDrawers";
             this.numerDrawers.Size = new System.Drawing.Size(51, 22);
-            this.numerDrawers.TabIndex = 8;
+            this.numerDrawers.TabIndex = 1;
             // 
             // numberDrawers
             // 
             this.numberDrawers.AutoSize = true;
             this.numberDrawers.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
-            this.numberDrawers.Location = new System.Drawing.Point(100, 221);
+            this.numberDrawers.Location = new System.Drawing.Point(90, 221);
             this.numberDrawers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.numberDrawers.Name = "numberDrawers";
             this.numberDrawers.Size = new System.Drawing.Size(202, 26);
@@ -167,18 +167,18 @@
             this.cmbDelivery.Margin = new System.Windows.Forms.Padding(4);
             this.cmbDelivery.Name = "cmbDelivery";
             this.cmbDelivery.Size = new System.Drawing.Size(160, 24);
-            this.cmbDelivery.TabIndex = 11;
+            this.cmbDelivery.TabIndex = 5;
             // 
             // newQuote
             // 
             this.newQuote.AutoSize = true;
             this.newQuote.Font = new System.Drawing.Font("Trebuchet MS", 30F, System.Drawing.FontStyle.Bold);
-            this.newQuote.Location = new System.Drawing.Point(231, 25);
+            this.newQuote.Location = new System.Drawing.Point(299, 25);
             this.newQuote.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.newQuote.Name = "newQuote";
-            this.newQuote.Size = new System.Drawing.Size(421, 63);
+            this.newQuote.Size = new System.Drawing.Size(285, 63);
             this.newQuote.TabIndex = 12;
-            this.newQuote.Text = "Displaying Quote";
+            this.newQuote.Text = "New Quote";
             // 
             // customerName
             // 
@@ -197,9 +197,9 @@
             this.name.Margin = new System.Windows.Forms.Padding(4);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(391, 22);
-            this.name.TabIndex = 14;
+            this.name.TabIndex = 0;
             // 
-            // DisplayQuote
+            // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -220,7 +220,7 @@
             this.Controls.Add(this.width);
             this.Controls.Add(this.numerWidth);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "DisplayQuote";
+            this.Name = "AddQuote";
             this.Text = "AddQuote";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddQuote_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.numerWidth)).EndInit();
