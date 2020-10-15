@@ -30,7 +30,7 @@ namespace megaDesk_Jim
             labelDrawers.Text = _deskQuote.Desk.NumberOfDrawers.ToString();
             labelDelivery.Text = _deskQuote.DeliveryType.ToString();
             labelMaterial.Text = _deskQuote.Desk.SurfaceMaterial.ToString();
-            labelPrice.Text = _deskQuote.getQuotePrice().ToString();
+            labelPrice.Text = _deskQuote.QuotePrice.ToString();
         }
 
         private void DisplayQuote_FormClosed(object sender, FormClosedEventArgs e)

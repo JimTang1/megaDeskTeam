@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -76,11 +78,57 @@ namespace megaDesk_Jim
             deskQuote.CustomerName = this.name.Text;
             deskQuote.Desk = desk;
             deskQuote.DeliveryType = (Delivery)this.cmbDelivery.SelectedItem;
+            deskQuote.QuoteDate = DateTime.Now;
+            deskQuote.QuotePrice = deskQuote.getQuotePrice();
 
             DisplayQuote displayQuote = new DisplayQuote(this, deskQuote);
             displayQuote.Show();
             
             this.Hide();
+
+            addQuoteToFile(deskQuote);
+        }
+
+        private void addQuoteToFile(DeskQuote deskQuote)
+        {
+            // create a quote file
+            var quotesFile = @"quote.json";
+            List<DeskQuote> deskQuotes = new List<DeskQuote>();
+
+            // read json files first
+            if (File.Exists(quotesFile))
+            {
+                using (StreamReader reader = new StreamReader(quotesFile))
+                {
+                    string quotes = reader.ReadToEnd();
+
+                    // check if quotes list is not empty
+                    if (quotes.Length > 0)
+                    {
+                        // Deserializing desk quotes list
+                        deskQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(quotes);
+                    }
+                }
+            }
+
+            // add a new quote
+            deskQuotes.Add(deskQuote);
+
+            // Save a quote to a json file
+            saveQuote(deskQuotes);
+
+        }
+
+        private void saveQuote(List<DeskQuote> deskQuotes)
+        {
+            var quotesFile = @"quote.json";
+
+            string JSONResult = JsonConvert.SerializeObject(deskQuotes);
+            using (StreamWriter writer = new StreamWriter(quotesFile))
+            {
+                writer.WriteLine(JSONResult.ToString());
+                writer.Close();
+            }
         }
     }
 }

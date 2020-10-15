@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Cache;
 using System.Text;
@@ -27,12 +28,6 @@ namespace megaDesk_Jim
         private const decimal ROSEWOOD_COST = 300.00M;
         private const decimal VENEER_COST = 125.00M;
 
-        // Grab these numbers from a file.
-        private const decimal RUSH_3DAYS = 60.00M;
-        private const decimal RUSH_5DAYS = 40.00M;
-        private const decimal RUSH_7DAYS = 30.00M;
-
-
         public Desk Desk { get; set; }
 
         public string CustomerName { get; set; }
@@ -43,25 +38,60 @@ namespace megaDesk_Jim
 
         public Delivery DeliveryType { get; set; }
 
-        public decimal getRushOrderPrice()
+        public int getRushOrderPrice()
         {
-            decimal rushPrice = 0;
-            if (this.DeliveryType == Delivery.Rush3Days)
+            int[,] rushPrices = new int[3,3];
+            int rushPrice = 0;
+            string line;
+            int col = 0;
+            int row = 0;
+            StreamReader rushPriceFile = new StreamReader(@"rushOrderPrices.txt");
+
+            while ((line = rushPriceFile.ReadLine()) != null)
             {
-                rushPrice = RUSH_3DAYS;
+                if (col > 2)
+                {
+                    col = 0;
+                    row++;
+                }
+                rushPrices[row, col] = int.Parse(line);
+                col++;
             }
-            else if (this.DeliveryType == Delivery.Rush5Days)
+
+            decimal surfaceArea = this.Desk.Depth * this.Desk.Width;
+
+            if (this.DeliveryType == Delivery.Rush3Days) // row 0
             {
-                rushPrice = RUSH_5DAYS;
+                if (surfaceArea < 1000)
+                    rushPrice = rushPrices[0, 0];
+                else if (surfaceArea <= 2000)
+                    rushPrice = rushPrices[0, 1];
+                else if (surfaceArea > 2000)
+                    rushPrice = rushPrices[0, 2];
             }
-            else if (this.DeliveryType == Delivery.Rush7Days)
+            else if (this.DeliveryType == Delivery.Rush5Days) // row 1
             {
-                rushPrice = RUSH_7DAYS;
+                if (surfaceArea < 1000)
+                    rushPrice = rushPrices[1, 0];
+                else if (surfaceArea <= 2000)
+                    rushPrice = rushPrices[1, 1];
+                else if (surfaceArea > 2000)
+                    rushPrice = rushPrices[1, 2];
+            }
+            else if (this.DeliveryType == Delivery.Rush7Days) // row 2
+            {
+                if (surfaceArea < 1000)
+                    rushPrice = rushPrices[2, 0];
+                else if (surfaceArea <= 2000)
+                    rushPrice = rushPrices[2, 1];
+                else if (surfaceArea > 2000)
+                    rushPrice = rushPrices[2, 2];
             }
             else
             {
                 rushPrice = 0;
             }
+
             return rushPrice;
         }
 
@@ -100,9 +130,8 @@ namespace megaDesk_Jim
             price += DRAWER_COST * this.Desk.NumberOfDrawers;
 
             price += getRushOrderPrice();
+
             return price;
         }
-
-
     }
 }
