@@ -29,6 +29,11 @@ namespace megaDesk_Jim
             this.numerDrawers.Maximum = Desk.MAX_DRAWERS;
             this.numerDrawers.Minimum = Desk.MIN_DRAWERS;
 
+            // Initializing defaults:
+            numerWidth.Text = "";
+            numerDepth.Text = "";
+            numerDrawers.Text = "";
+
             List<DeskTopMaterial> materials = Enum.GetValues(typeof(DeskTopMaterial))
                             .Cast<DeskTopMaterial>()
                             .ToList();
