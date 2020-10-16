@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Cache;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace megaDesk_Jim
 {
@@ -47,49 +48,58 @@ namespace megaDesk_Jim
             int row = 0;
             StreamReader rushPriceFile = new StreamReader(@"rushOrderPrices.txt");
 
-            while ((line = rushPriceFile.ReadLine()) != null)
+            try
             {
-                if (col > 2)
+                while ((line = rushPriceFile.ReadLine()) != null)
                 {
-                    col = 0;
-                    row++;
+                    if (col > 2)
+                    {
+                        col = 0;
+                        row++;
+                    }
+                    rushPrices[row, col] = int.Parse(line);
+                    col++;
                 }
-                rushPrices[row, col] = int.Parse(line);
-                col++;
-            }
 
-            decimal surfaceArea = this.Desk.Depth * this.Desk.Width;
+                decimal surfaceArea = this.Desk.Depth * this.Desk.Width;
 
-            if (this.DeliveryType == Delivery.Rush3Days) // row 0
-            {
-                if (surfaceArea < 1000)
-                    rushPrice = rushPrices[0, 0];
-                else if (surfaceArea <= 2000)
-                    rushPrice = rushPrices[0, 1];
-                else if (surfaceArea > 2000)
-                    rushPrice = rushPrices[0, 2];
+                if (this.DeliveryType == Delivery.Rush3Days) // row 0
+                {
+                    if (surfaceArea < 1000)
+                        rushPrice = rushPrices[0, 0];
+                    else if (surfaceArea <= 2000)
+                        rushPrice = rushPrices[0, 1];
+                    else if (surfaceArea > 2000)
+                        rushPrice = rushPrices[0, 2];
+                }
+                else if (this.DeliveryType == Delivery.Rush5Days) // row 1
+                {
+                    if (surfaceArea < 1000)
+                        rushPrice = rushPrices[1, 0];
+                    else if (surfaceArea <= 2000)
+                        rushPrice = rushPrices[1, 1];
+                    else if (surfaceArea > 2000)
+                        rushPrice = rushPrices[1, 2];
+                }
+                else if (this.DeliveryType == Delivery.Rush7Days) // row 2
+                {
+                    if (surfaceArea < 1000)
+                        rushPrice = rushPrices[2, 0];
+                    else if (surfaceArea <= 2000)
+                        rushPrice = rushPrices[2, 1];
+                    else if (surfaceArea > 2000)
+                        rushPrice = rushPrices[2, 2];
+                }
+                else
+                {
+                    rushPrice = 0;
+                }
+
             }
-            else if (this.DeliveryType == Delivery.Rush5Days) // row 1
+            catch (Exception err)
             {
-                if (surfaceArea < 1000)
-                    rushPrice = rushPrices[1, 0];
-                else if (surfaceArea <= 2000)
-                    rushPrice = rushPrices[1, 1];
-                else if (surfaceArea > 2000)
-                    rushPrice = rushPrices[1, 2];
-            }
-            else if (this.DeliveryType == Delivery.Rush7Days) // row 2
-            {
-                if (surfaceArea < 1000)
-                    rushPrice = rushPrices[2, 0];
-                else if (surfaceArea <= 2000)
-                    rushPrice = rushPrices[2, 1];
-                else if (surfaceArea > 2000)
-                    rushPrice = rushPrices[2, 2];
-            }
-            else
-            {
-                rushPrice = 0;
+                MessageBox.Show("There is an error when you calculate a rushPrice. {0}",
+                    err.InnerException.ToString());
             }
 
             return rushPrice;
