@@ -53,11 +53,6 @@ namespace megaDesk_Jim
             numerDrawers.Text = "";
         }
 
-        private void AddQuote_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void AddQuote_FormClosed(object sender, FormClosedEventArgs e)
         {
             Form MainMenu = (Form)this.Tag;
