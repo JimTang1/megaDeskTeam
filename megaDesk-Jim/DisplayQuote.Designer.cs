@@ -50,39 +50,43 @@
             // 
             this.customerName.AutoSize = true;
             this.customerName.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
-            this.customerName.Location = new System.Drawing.Point(100, 122);
+            this.customerName.Location = new System.Drawing.Point(158, 133);
+            this.customerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.customerName.Name = "customerName";
-            this.customerName.Size = new System.Drawing.Size(130, 22);
+            this.customerName.Size = new System.Drawing.Size(168, 26);
             this.customerName.TabIndex = 28;
-            this.customerName.Text = "Customer Name";
+            this.customerName.Text = "Customer Name:";
             // 
             // newQuote
             // 
             this.newQuote.AutoSize = true;
             this.newQuote.Font = new System.Drawing.Font("Trebuchet MS", 30F, System.Drawing.FontStyle.Bold);
-            this.newQuote.Location = new System.Drawing.Point(260, 41);
+            this.newQuote.Location = new System.Drawing.Point(299, 25);
+            this.newQuote.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.newQuote.Name = "newQuote";
-            this.newQuote.Size = new System.Drawing.Size(229, 49);
+            this.newQuote.Size = new System.Drawing.Size(297, 63);
             this.newQuote.TabIndex = 27;
-            this.newQuote.Text = "New Quote";
+            this.newQuote.Text = "View Quote";
             // 
             // delivery
             // 
             this.delivery.AutoSize = true;
             this.delivery.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
-            this.delivery.Location = new System.Drawing.Point(427, 279);
+            this.delivery.Location = new System.Drawing.Point(435, 280);
+            this.delivery.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.delivery.Name = "delivery";
-            this.delivery.Size = new System.Drawing.Size(70, 22);
+            this.delivery.Size = new System.Drawing.Size(99, 26);
             this.delivery.TabIndex = 25;
-            this.delivery.Text = "Delivery";
+            this.delivery.Text = "Delivery:";
             // 
             // numberDrawers
             // 
             this.numberDrawers.AutoSize = true;
             this.numberDrawers.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
-            this.numberDrawers.Location = new System.Drawing.Point(402, 187);
+            this.numberDrawers.Location = new System.Drawing.Point(90, 221);
+            this.numberDrawers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.numberDrawers.Name = "numberDrawers";
-            this.numberDrawers.Size = new System.Drawing.Size(164, 22);
+            this.numberDrawers.Size = new System.Drawing.Size(202, 26);
             this.numberDrawers.TabIndex = 24;
             this.numberDrawers.Text = "Number of Drawers:";
             // 
@@ -90,9 +94,10 @@
             // 
             this.depth.AutoSize = true;
             this.depth.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
-            this.depth.Location = new System.Drawing.Point(100, 278);
+            this.depth.Location = new System.Drawing.Point(100, 341);
+            this.depth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.depth.Name = "depth";
-            this.depth.Size = new System.Drawing.Size(59, 22);
+            this.depth.Size = new System.Drawing.Size(76, 26);
             this.depth.TabIndex = 21;
             this.depth.Text = "Depth:";
             // 
@@ -100,17 +105,20 @@
             // 
             this.surfaceMaterial.AutoSize = true;
             this.surfaceMaterial.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
-            this.surfaceMaterial.Location = new System.Drawing.Point(427, 235);
+            this.surfaceMaterial.Location = new System.Drawing.Point(435, 221);
+            this.surfaceMaterial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.surfaceMaterial.Name = "surfaceMaterial";
-            this.surfaceMaterial.Size = new System.Drawing.Size(133, 22);
+            this.surfaceMaterial.Size = new System.Drawing.Size(174, 26);
             this.surfaceMaterial.TabIndex = 20;
-            this.surfaceMaterial.Text = "Surface Material";
+            this.surfaceMaterial.Text = "Surface Material:";
             // 
             // close
             // 
-            this.close.Location = new System.Drawing.Point(286, 394);
+            this.close.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.close.Location = new System.Drawing.Point(327, 444);
+            this.close.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(171, 44);
+            this.close.Size = new System.Drawing.Size(228, 59);
             this.close.TabIndex = 18;
             this.close.Text = "Close";
             this.close.UseVisualStyleBackColor = true;
@@ -120,9 +128,10 @@
             // 
             this.width.AutoSize = true;
             this.width.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
-            this.width.Location = new System.Drawing.Point(100, 232);
+            this.width.Location = new System.Drawing.Point(100, 280);
+            this.width.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.width.Name = "width";
-            this.width.Size = new System.Drawing.Size(59, 22);
+            this.width.Size = new System.Drawing.Size(75, 26);
             this.width.TabIndex = 16;
             this.width.Text = "Width:";
             // 
@@ -130,9 +139,10 @@
             // 
             this.totalPrice.AutoSize = true;
             this.totalPrice.Font = new System.Drawing.Font("Trebuchet MS", 15F, System.Drawing.FontStyle.Bold);
-            this.totalPrice.Location = new System.Drawing.Point(218, 347);
+            this.totalPrice.Location = new System.Drawing.Point(434, 341);
+            this.totalPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.totalPrice.Name = "totalPrice";
-            this.totalPrice.Size = new System.Drawing.Size(119, 26);
+            this.totalPrice.Size = new System.Drawing.Size(148, 32);
             this.totalPrice.TabIndex = 30;
             this.totalPrice.Text = "Total Price:";
             // 
@@ -140,9 +150,10 @@
             // 
             this.labelWidth.AutoSize = true;
             this.labelWidth.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
-            this.labelWidth.Location = new System.Drawing.Point(165, 232);
+            this.labelWidth.Location = new System.Drawing.Point(201, 280);
+            this.labelWidth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelWidth.Name = "labelWidth";
-            this.labelWidth.Size = new System.Drawing.Size(53, 22);
+            this.labelWidth.Size = new System.Drawing.Size(66, 26);
             this.labelWidth.TabIndex = 32;
             this.labelWidth.Text = "width";
             // 
@@ -150,9 +161,10 @@
             // 
             this.labelDepth.AutoSize = true;
             this.labelDepth.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
-            this.labelDepth.Location = new System.Drawing.Point(165, 279);
+            this.labelDepth.Location = new System.Drawing.Point(201, 341);
+            this.labelDepth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDepth.Name = "labelDepth";
-            this.labelDepth.Size = new System.Drawing.Size(53, 22);
+            this.labelDepth.Size = new System.Drawing.Size(69, 26);
             this.labelDepth.TabIndex = 33;
             this.labelDepth.Text = "Depth";
             // 
@@ -160,19 +172,20 @@
             // 
             this.labelDrawers.AutoSize = true;
             this.labelDrawers.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
-            this.labelDrawers.Location = new System.Drawing.Point(585, 187);
+            this.labelDrawers.Location = new System.Drawing.Point(310, 222);
+            this.labelDrawers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDrawers.Name = "labelDrawers";
-            this.labelDrawers.Size = new System.Drawing.Size(67, 22);
+            this.labelDrawers.Size = new System.Drawing.Size(86, 26);
             this.labelDrawers.TabIndex = 34;
             this.labelDrawers.Text = "number";
             // 
             // labelName
             // 
-            this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
-            this.labelName.Location = new System.Drawing.Point(340, 122);
+            this.labelName.Location = new System.Drawing.Point(334, 133);
+            this.labelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(53, 22);
+            this.labelName.Size = new System.Drawing.Size(391, 26);
             this.labelName.TabIndex = 35;
             this.labelName.Text = "Name";
             // 
@@ -180,9 +193,10 @@
             // 
             this.labelDelivery.AutoSize = true;
             this.labelDelivery.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
-            this.labelDelivery.Location = new System.Drawing.Point(585, 279);
+            this.labelDelivery.Location = new System.Drawing.Point(623, 281);
+            this.labelDelivery.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDelivery.Name = "labelDelivery";
-            this.labelDelivery.Size = new System.Drawing.Size(70, 22);
+            this.labelDelivery.Size = new System.Drawing.Size(92, 26);
             this.labelDelivery.TabIndex = 36;
             this.labelDelivery.Text = "Delivery";
             // 
@@ -190,9 +204,10 @@
             // 
             this.labelMaterial.AutoSize = true;
             this.labelMaterial.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
-            this.labelMaterial.Location = new System.Drawing.Point(585, 235);
+            this.labelMaterial.Location = new System.Drawing.Point(622, 222);
+            this.labelMaterial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMaterial.Name = "labelMaterial";
-            this.labelMaterial.Size = new System.Drawing.Size(71, 22);
+            this.labelMaterial.Size = new System.Drawing.Size(90, 26);
             this.labelMaterial.TabIndex = 37;
             this.labelMaterial.Text = "Material";
             // 
@@ -200,17 +215,18 @@
             // 
             this.labelPrice.AutoSize = true;
             this.labelPrice.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
-            this.labelPrice.Location = new System.Drawing.Point(364, 347);
+            this.labelPrice.Location = new System.Drawing.Point(623, 345);
+            this.labelPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(49, 22);
+            this.labelPrice.Size = new System.Drawing.Size(61, 26);
             this.labelPrice.TabIndex = 38;
             this.labelPrice.Text = "Price";
             // 
             // DisplayQuote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(882, 533);
             this.Controls.Add(this.labelPrice);
             this.Controls.Add(this.labelMaterial);
             this.Controls.Add(this.labelDelivery);
@@ -227,6 +243,7 @@
             this.Controls.Add(this.surfaceMaterial);
             this.Controls.Add(this.close);
             this.Controls.Add(this.width);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DisplayQuote";
             this.Text = "DisplayQuote";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DisplayQuote_FormClosed);

@@ -184,16 +184,16 @@
             // 
             this.customerName.AutoSize = true;
             this.customerName.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
-            this.customerName.Location = new System.Drawing.Point(155, 133);
+            this.customerName.Location = new System.Drawing.Point(158, 133);
             this.customerName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.customerName.Name = "customerName";
-            this.customerName.Size = new System.Drawing.Size(161, 26);
+            this.customerName.Size = new System.Drawing.Size(168, 26);
             this.customerName.TabIndex = 13;
-            this.customerName.Text = "Customer Name";
+            this.customerName.Text = "Customer Name:";
             // 
             // name
             // 
-            this.name.Location = new System.Drawing.Point(337, 133);
+            this.name.Location = new System.Drawing.Point(334, 135);
             this.name.Margin = new System.Windows.Forms.Padding(4);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(391, 22);
@@ -221,7 +221,7 @@
             this.Controls.Add(this.numerWidth);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddQuote";
-            this.Text = "AddQuote";
+            this.Text = " ";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddQuote_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.numerWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numerDepth)).EndInit();
