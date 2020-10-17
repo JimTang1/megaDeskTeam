@@ -47,7 +47,11 @@ namespace megaDesk_Jim
             cmbDelivery.DataSource = deliveryDay;
             cmbDelivery.SelectedIndex = -1;
 
-    }
+            // Initializing defaults:
+            numerWidth.Text = "";
+            numerDepth.Text = "";
+            numerDrawers.Text = "";
+        }
 
         private void AddQuote_Load(object sender, EventArgs e)
         {
